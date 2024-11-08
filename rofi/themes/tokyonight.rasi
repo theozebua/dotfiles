@@ -4,7 +4,7 @@
     selected-fg-color: #e0def4;
     
     font: "FiraCode Nerd Font 12";
-    background-color: rgba(30, 30, 40, 0.3);
+    background-color: rgba(30, 30, 40);
 }
 
 window {
