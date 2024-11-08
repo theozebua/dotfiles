@@ -1,0 +1,5 @@
+@theme "~/.config/rofi/themes/tokyonight.rasi"
+
+configuration {
+  show-icons: true;
+}

@@ -1,0 +1,75 @@
+* {
+    primary: #c0caf5;
+    selected-bg-color: rgba(76, 76, 166, 0.6);
+    selected-fg-color: #e0def4;
+    
+    font: "FiraCode Nerd Font 12";
+    background-color: rgba(30, 30, 40, 0.3);
+}
+
+window {
+    width: 40%;
+    location: center;
+    anchor: center;
+    transparency: "real";
+    border-radius: 6px;
+    spacing: 0;
+    children: [ mainbox ];
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    color: @primary;
+    padding: 8px;
+    border: 2px 2px 2px 2px;
+    border-color: @primary;
+    border-radius: 6px 6px 0px 0px;
+    children: [entry];
+}
+
+message {
+    padding: 0;
+    border-color: @primary;
+    border: 0px 1px 1px 1px;
+}
+
+entry {
+    background-color: transparent;
+    color: @primary;
+    cursor: pointer;
+    placeholder: "Type here...";
+}
+
+listview {
+    spacing: 8px;
+    lines: 10;
+    columns: 1;
+    border: 0px 2px 2px 2px; 
+    border-radius: 0px 0px 6px 6px;
+    border-color: @primary;
+}
+
+element {
+    background-color: transparent;
+    padding: 8px;
+    color: @primary;
+    children: [ element-text, element-icon ];
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-icon {
+    background-color: transparent;
+}
+
+element selected normal {
+    color: @selected-fg-color;
+    background-color: @selected-bg-color;
+}
