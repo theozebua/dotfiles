@@ -7,7 +7,6 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
-    add_blank_line_at_top = true,
     auto_clean_after_session_restore = true,
     close_if_last_window = true,
     default_component_configs = { 
