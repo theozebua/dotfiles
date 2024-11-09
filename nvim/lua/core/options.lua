@@ -19,6 +19,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.relativenumber = true
+vim.opt.termguicolors = true
 vim.o.numberwidth = 2
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
