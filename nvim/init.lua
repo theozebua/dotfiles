@@ -4,14 +4,8 @@ require 'config.lazy'
 
 -- Setup plugins
 require('lazy').setup({
-  require 'plugins.themes.tokyonight',
-  require 'plugins.startup',
-  require 'plugins.neo-tree',
-  require 'plugins.lualine',
-  require 'plugins.bufferline',
-  require 'plugins.treesitter',
-  require 'plugins.telescope',
-  require 'plugins.discord-presence',
+  { import = 'plugins'},
+  { import = 'plugins.themes'},
 })
 
 -- Setup theme
