@@ -173,7 +173,10 @@ bindsym $mod+r mode "resize"
 
 # Gaps
 gaps inner 14px
-gaps horizontal 4px
+gaps left 4px
+gaps top 54px
+gaps right 4px
+gaps bottom 4px
 smart_gaps off
 
 # Window title alighment
