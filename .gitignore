@@ -21,3 +21,6 @@
 
 !rofi/
 !rofi/**
+
+!udev/
+!udev/**

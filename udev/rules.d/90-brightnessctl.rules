@@ -1,0 +1,17 @@
+# Make sure that we have `brightnessctl` installed in our machine.
+# We need this to make `brightnessctl` can run without `sudo`.
+#
+# Make a symlink to `/etc/udev/rules.d/90-brightnessctl.rules` by running:
+# `ln -s ~/.config/udev/rules.d/90-brightnessctl.rules /etc/udev/rules.d/90-brightnessctl.rules`
+#
+# Then reload the udev rules by running:
+# `sudo udevadm control -R && sudo udevadm trigger`
+#
+# Also, don't forget that we have to add our user to the video group by running:
+# `sudo usermod -aG video $USER`
+#
+# We can check our user's group with `groups $USER`
+#
+# Lastly, we have to log out from our current session and log back in to a new session
+# to apply the changes.
+ACTION=="add", SUBSYSTEM=="backlight", GROUP="video", MODE="0664"
