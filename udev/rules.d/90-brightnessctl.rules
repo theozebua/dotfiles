@@ -1,5 +1,13 @@
 # Make sure that we have `brightnessctl` installed in our machine.
 # We need this to make `brightnessctl` can run without `sudo`.
+# 
+# We have to change owner for the backlight. In my case is intel_backlight
+# `sudo chown -R root:video /sys/class/backlight/intel_backlight/actual_brightness`
+# `sudo chown -R root:video /sys/class/backlight/intel_backlight/brightness`
+# 
+# And we have to set permission to those files (644)
+# `sudo chmod 664 /sys/class/backlight/intel_backlight/actual_brightness`
+# `sudo chmod 664 /sys/class/backlight/intel_backlight/brightness`
 #
 # Make a symlink to `/etc/udev/rules.d/90-brightnessctl.rules` by running:
 # `ln -s ~/.config/udev/rules.d/90-brightnessctl.rules /etc/udev/rules.d/90-brightnessctl.rules`
@@ -13,5 +21,5 @@
 # We can check our user's group with `groups $USER`
 #
 # Lastly, we have to log out from our current session and log back in to a new session
-# to apply the changes.
+# to apply the changes (in case if the `brightnessctl` still does not work).
 ACTION=="add", SUBSYSTEM=="backlight", GROUP="video", MODE="0664"
