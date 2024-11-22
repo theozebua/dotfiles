@@ -5,7 +5,7 @@
 # `sudo chown -R root:video /sys/class/backlight/intel_backlight/actual_brightness`
 # `sudo chown -R root:video /sys/class/backlight/intel_backlight/brightness`
 # 
-# And we have to set permission to those files (644)
+# And we have to set permission to those files (664)
 # `sudo chmod 664 /sys/class/backlight/intel_backlight/actual_brightness`
 # `sudo chmod 664 /sys/class/backlight/intel_backlight/brightness`
 #
@@ -22,4 +22,7 @@
 #
 # Lastly, we have to log out from our current session and log back in to a new session
 # to apply the changes (in case if the `brightnessctl` still does not work).
-ACTION=="add", SUBSYSTEM=="backlight", GROUP="video", MODE="0664"
+
+# NEW
+# Udev rule for automatic owner and permissions setup with flexible backlight kernel name.
+ACTION=="add", SUBSYSTEM=="backlight", GROUP="video", MODE="0664", RUN+="/bin/chown root:video /sys/class/backlight/%k/brightness", RUN+="/bin/chmod 664 /sys/class/backlight/%k/brightness", RUN+="/bin/chown root:video /sys/class/backlight/%k/actual_brightness", RUN+="/bin/chmod 664 /sys/class/backlight/%k/actual_brightness"
