@@ -1,13 +1,19 @@
 return {
-  'vyfor/cord.nvim',
-  build = './build || .\\build',
-  event = 'VeryLazy',
+  "vyfor/cord.nvim",
+  build = "./build || .\\build",
+  event = "VeryLazy",
   opts = {
     editor = {
-      tooltip = 'Neovim',
+      tooltip = "Neovim",
     },
     display = {
       show_repository = false,
     },
+    text = {
+      workspace = "",
+    },
+    idle = {
+      enable = false,
+    },
   },
-} 
+}
