@@ -1,6 +1,9 @@
 *
 !.gitignore
 
+!dunst/
+!dunst/**
+
 !i3/
 !i3/**
 
