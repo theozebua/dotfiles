@@ -1,5 +1,6 @@
 *
 !.gitignore
+!README.md
 
 !dunst/
 !dunst/**
@@ -24,6 +25,9 @@
 
 !rofi/
 !rofi/**
+
+!starship
+!starship/**
 
 !udev/
 !udev/**
